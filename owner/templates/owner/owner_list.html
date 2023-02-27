@@ -1,0 +1,53 @@
+{% extends "owner/base_generic.html" %}
+{% block content %}
+
+<!--<p>Valor de la edad ingresado es: <b>{{data.edad}}</b></p>-->
+<!--{% if data.edad >= 18 %}-->
+<!--        <div>-->
+<!--            <p>&#45;&#45; {{data.nombre}} es <b>mayor</b> de edad.</p>-->
+<!--        </div>-->
+<!--{% else %}-->
+<!--        <div>-->
+<!--            <p>&#45;&#45; {{data.nombre}} es <b>menor</b> de edad.</p>-->
+<!--        </div>-->
+<!--{% endif %}-->
+
+<!--{% if data.nombre %}-->
+<!--        <table class="table table-bordered">-->
+<!--            <thead class="bg-info">-->
+<!--                <tr>-->
+<!--                    <td>Nombre</td>-->
+<!--                    <td>Edad</td>-->
+<!--                </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--                <tr>-->
+<!--                    <td>{{data.nombre}}</td>-->
+<!--                    <td>{{data.edad}}</td>-->
+<!--                </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+<!--{% endif %}-->
+<h4>Listado de Owner</h4>
+        <table class="table table-bordered">
+            <thead class="bg-info">
+                <tr>
+                    <td>Nombre</td>
+                    <td>Edad</td>
+                    <td>Pais</td>
+                    <td>DNI</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data reversed %}
+                <tr>
+                    <td>{{row.nombre}}</td>
+                    <td>{{row.edad}}</td>
+                     <td>{{row.pais}}</td>
+                     <td>{{row.dni}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+{% endblock  %}

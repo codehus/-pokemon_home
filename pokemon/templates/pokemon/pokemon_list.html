@@ -1,0 +1,22 @@
+{% extends 'pokemon/base_generic.html' %}
+{% block content %}
+<h4>Listado de Pokemones</h4>
+        <table class="table table-bordered">
+            <thead class="bg-primary">
+                <tr>
+                    <td>Nombre</td>
+                    <td>Tipo</td>
+                    <td>Generacion</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data reversed %}
+                <tr>
+                    <td>{{row.nombre}}</td>
+                    <td>{{row.tipo}}</td>
+                    <td>{{row.generacion}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
